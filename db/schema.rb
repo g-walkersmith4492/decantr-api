@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 2019_01_29_162923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(version: 2) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["token"], name: "index_users_on_token", unique: true
+  end
+
+  create_table "wines", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "varietal", null: false
+    t.string "country", null: false
+    t.string "region", null: false
+    t.integer "vintage", null: false
+    t.date "date", null: false
+    t.integer "abv", null: false
+    t.integer "rating", null: false
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "examples", "users"
