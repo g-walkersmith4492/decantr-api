@@ -1,9 +1,9 @@
-class WinesController < ApplicationController
+class WinesController < ProtectedController
   before_action :set_wine, only: [:show, :update, :destroy]
 
   # GET /wines
   def index
-    @wines = Wine.all
+    @wines = current_user.wines.all
 
     render json: @wines
   end
@@ -15,7 +15,7 @@ class WinesController < ApplicationController
 
   # POST /wines
   def create
-    @wine = Wine.new(wine_params)
+    @wine = current_user.wines.new(wine_params)
 
     if @wine.save
       render json: @wine, status: :created, location: @wine
@@ -41,7 +41,7 @@ class WinesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wine
-      @wine = Wine.find(params[:id])
+      @wine = current_user.wines.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
