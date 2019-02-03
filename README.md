@@ -28,19 +28,11 @@ https://decantr.herokuapp.com
 https://g-walkersmith4492.github.io/decantr-client/
 
 
-## List of Technologies used during this project:
+## List of Technologies used during this project for back-end:
 
-- JavaScript
-- jQuery
-- HTML
-- CSS
-- Bootstrap
-- Sass
-- jQuery
-- ajax
-- API
-- Rails
-- Handlebars
+- Rubyonrails
+- Postgresql
+- RESTful routes
 
 ## Entity Relationship Diagram:
 
